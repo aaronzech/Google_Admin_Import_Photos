@@ -14,10 +14,10 @@ print("File:",file)
 folderName = input("Enter name of desktop folder to look in? ")
 
 
-def addColumnHeader(file):
+def addColumnHeader(file,col,value):
     wb = load_workbook(file) #Load Workbook
     ws = wb.active #Worksheet
-    ws['D1'].value = "File_Location"
+    ws[col].value = value
     wb.save(file)
 
 # Concatenates the ID field with the file location.
@@ -32,17 +32,25 @@ def populateFileLocation(file,folderName):
     wb.save(file)
 
 #Export File as CSV
-def convertToCSV(file):
+def convertToCSV(file,newFileName):
     fileData = pd.read_excel(file,sheet_name='QRY801')
-    fileData.to_csv("GooglePhotos_GAM.csv",index=False)
+    fileData.to_csv(newFileName,index=False)
     os.remove(file) #delete XLSX file 
 
 
-#Main Program 
+import subprocess
+# Copy text to clip board
+def copy2clip(txt):
+    cmd='echo '+txt.strip()+'|clip'
+    return subprocess.check_call(cmd, shell=True)
 
+#Main Program 
 if __name__ == "__main__":
     print("Starting...")
-    addColumnHeader(file)
+    addColumnHeader(file,'D1',"File_Location")
     populateFileLocation(file,"photos")
-    convertToCSV(file)
+    convertToCSV(file,"GooglePhotos_GAM.csv")
+    #Copy GAM command to OS clipboard
+    copy2clip("gam csv C:\\Users\\aszadmin\\Documents\\Google Photos\\GooglePhotos_GAM.csv gam user ~Email update photo ~File_Location")
     print("finished")
+
