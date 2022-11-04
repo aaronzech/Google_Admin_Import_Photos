@@ -27,3 +27,4 @@ Have the following Python libraries installed.
   ```sh
   gam csv {FILE_LOCATION} gam user ~Email update photo ~File_Location
   ```
+The program will also paste this command to your clipboard
