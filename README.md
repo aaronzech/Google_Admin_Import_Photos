@@ -14,15 +14,17 @@ Have the following Python libraries installed.
 1) Download the "Google Photos" query from Synergy and save to downloads folder
 ![](https://github.com/aaronzech/images/blob/main/Screenshot_231.png)
 
-2) Run the python script "formatter.py"
+2) Make sure you have a "photos" folder on the desktop and have the student profile images in there.
 
-3) When the program runs it will prompt the user for the Synergy query
+3) Run the python script "formatter.py"
 
-4) Look for the <b>GooglePhotos_GAM.csv</b> file that was created by the program.
+4) When the program runs it will prompt the user for the Synergy query
 
-5) Open GAM 
+5) Look for the <b>GooglePhotos_GAM.csv</b> file that was created by the program.
 
-6) Run the following command
+6) Open GAM 
+
+7) Run the following command
 
   ```sh
   gam csv {FILE_LOCATION} gam user ~Email update photo ~File_Location
