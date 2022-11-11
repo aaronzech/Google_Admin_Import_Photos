@@ -14,7 +14,7 @@ Have the following Python libraries installed.
 1) Download the "Google Photos" query from Synergy and save to downloads folder
 ![](https://github.com/aaronzech/images/blob/main/Screenshot_231.png)
 
-2) Make sure you have a "photos" folder on the desktop and have the student profile images in there.
+2) Make sure you have a <b>"photos"</b> folder on the desktop and have the student profile images in there.
 
 3) Run the python script "formatter.py"
 
